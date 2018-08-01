@@ -3,10 +3,7 @@ $(() => {
   let currentTable = null;
   let mouseX;
 let mouseY;
-$(document).mousemove( function(e) {
-   mouseX = e.pageX; 
-   mouseY = e.pageY;
-});
+
 
   for (let i = 0; i < 9; i++) {
     $("#table").append(`<div>${(i+1)}</div>`);
@@ -41,12 +38,16 @@ $(document).mousemove( function(e) {
 
   let  mouseX = e.pageX; 
   let mouseY = e.pageY;
+  $(document).mousemove( function(e) {
+    mouseX = e.pageX; 
+    mouseY = e.pageY;
+ });
     $(e.target).css("cursor", "not-allowed");
    
     
-      $('.guest-details').css({'top':mouseY,'left':mouseX}).fadeIn('slow');
+      // $('.guest-details').css({'top':mouseY,'left':mouseX}).fadeIn('slow');
     
-    $(e.target).css(" {top:mouseY, left:mouseX}", ".guest-details", ).fadeIn('slow');
+    $(".table div.reserved").css(" {top:e.pageY, left:e.pageX}", ".guest-details", ).fadeIn('slow');
     $(".guest-details").append(`<p>Name: ${$(e.target).data("guest-name")}
     <p>Size of Party:${$(e.target).data("guest-size")}
     `);
