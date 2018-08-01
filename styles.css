@@ -145,7 +145,15 @@ div#container div#table div.reserved {
   color: #EEE;
 }
 .guest-details p{
-  background: black;
-  color: red;
-  width: 100px;
+  background: #ADAAAA;
+  color: black;
+  width: 200px;
+  
+}
+.guest-details{
+  position: relative;
+  border:2px;
+  border-color: black;
+  border-radius: 3px;
+  border-style: solid
 }
